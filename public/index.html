@@ -18,188 +18,222 @@
 	</head>
 	<body>
 
-		<!-- Header -->
-			<div id="header">
+	  <!-- Header -->
+	  <div id="header">
 
-				<div class="top">
+	    <div class="top">
 
-					<!-- Logo -->
-						<div id="logo">
-							<span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span>
-							<h1 id="title">Krishan Arya</h1>
-							<p>Software engineer</p>
-						</div>
+	      <!-- Logo -->
+	      <div id="logo">
+	        <span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span>
+	        <h1 id="title">Krishan Arya</h1>
+	        <p>Software engineer</p>
+	      </div>
 
-					<!-- Nav -->
-						<nav id="nav">
-							<!--
+	      <!-- Nav -->
+	      <nav id="nav">
+	        <!--
 
-								Prologue's nav expects links in one of two formats:
+									Prologue's nav expects links in one of two formats:
 
-								1. Hash link (scrolls to a different section within the page)
+									1. Hash link (scrolls to a different section within the page)
 
-								   <li><a href="#foobar" id="foobar-link" class="icon fa-whatever-icon-you-want skel-layers-ignoreHref"><span class="label">Foobar</span></a></li>
+									   <li><a href="#foobar" id="foobar-link" class="icon fa-whatever-icon-you-want skel-layers-ignoreHref"><span class="label">Foobar</span></a></li>
 
-								2. Standard link (sends the user to another page/site)
+									2. Standard link (sends the user to another page/site)
 
-								   <li><a href="http://foobar.tld" id="foobar-link" class="icon fa-whatever-icon-you-want"><span class="label">Foobar</span></a></li>
+									   <li><a href="http://foobar.tld" id="foobar-link" class="icon fa-whatever-icon-you-want"><span class="label">Foobar</span></a></li>
 
-							-->
-							<ul>
-								<li><a href="#top" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Intro</span></a></li>
-								<li><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Portfolio</span></a></li>
-								<li><a href="#about" id="about-link" class="skel-layers-ignoreHref"><span class="icon fa-user">About Me</span></a></li>
-								<li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-envelope">Contact</span></a></li>
-									<li><a href="#about" id="about-link" class="skel-layers-ignoreHref"><span class="icon fa-user">Posts</span></a></li>
-							</ul>
-						</nav>
+								-->
+	        <ul>
+	          <li><a id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Intro</span></a></li>
+	          <li><a id="portfolio-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Portfolio</span></a></li>
+	          <li><a id="about-link" class="skel-layers-ignoreHref"><span class="icon fa-user">About Me</span></a></li>
+	          <li><a id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-envelope">Contact</span></a></li>
+	          <li><a id="about-link" class="skel-layers-ignoreHref"><span class="icon fa-user">Posts</span></a></li>
+	        </ul>
+	      </nav>
 
-				</div>
+	    </div>
 
-				<div class="bottom">
+	    <div class="bottom">
 
-					<!-- Social Icons -->
-						<ul class="icons">
-							<li><a href="https://twitter.com/KMAengineer" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="https://github.com/Anoninnyc/" class="icon fa-github"><span class="label">Github</span></a></li>
-							<li><a href="mailto:krishanmarya1@gmail.com" class="icon fa-envelope"><span class="label">Email</span></a></li>
-						</ul>
+	      <!-- Social Icons -->
+	      <ul class="icons">
+	        <li><a href="https://twitter.com/KMAengineer" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+	        <li><a href="https://github.com/Anoninnyc/" class="icon fa-github"><span class="label">Github</span></a></li>
+	        <li onclick='email()'><a 
+	         class="icon fa-envelope"><span class="label">Email</span></a></li>
+	      </ul>
 
-				</div>
+	    </div>
 
-			</div>
+	  </div>
 
-		<!-- Main -->
-			<div id="main">
+	  <!-- Main -->
+	  <div id="main">
 
-				<!-- Intro -->
-					<section id="top" class="one dark cover">
-						<div class="container">
+	    <!-- Intro -->
+	    <section id="top" class="one dark cover">
+	      <div class="container">
 
-							<header>
-								<h2 class="alt">Hi! Welcome to my site</h2>
-								<p>Ligula scelerisque justo sem accumsan diam quis<br />
-								vitae natoque dictum sollicitudin elementum.</p>
-							</header>
-
-							<footer>
-								<a href="#portfolio" class="button scrolly">My Portfolio</a>
-							</footer>
-
-						</div>
-					</section>
-
-				<!-- Portfolio -->
-					<section id="portfolio" class="two">
-						<div class="container">
-
-							<header>
-								<h2>Portfolio</h2>
-							</header>
-
-							<p>Some of my apps</p>
-
-							<div class="row">
-								<div class="4u 12u$(mobile)">
-									<article class="item">
-										<a href="#" class="image fit"><img src="images/HS-min.png" alt="" /></a>
-										<header>
-											<h3>Hotspots</h3>
-										</header>
-									</article>
-								
-								</div>
-								<div class="4u 12u$(mobile)">
-									<article class="item">
-										<a href="#" class="image fit"><img src="images/TMA-min.png" alt="" /></a>
-										<header>
-											<h3>Reel Pals</h3>
-										</header>
-									</article>
-									
-								</div>
-								<div class="4u$ 12u$(mobile)">
-									<article class="item">
-										<a href="#" class="image fit"><img src="images/JWF-min.png" alt="" /></a>
-										<header>
-											<h3>Jam With Friends</h3>
-										</header>
-									</article>
-									
-								</div>
-							</div>
-
-						</div>
-					</section>
-
-				<!-- About Me -->
-					<section id="about" class="three">
-						<div class="container">
-
-							<header>
-								<h2>About Me</h2>
-							</header>
+	        <header>
+	          <h2 class="alt">Hi! Welcome to my site</h2>
+	          <p>Ligula scelerisque justo sem accumsan diam quis
+	            <br /> vitae natoque dictum sollicitudin elementum.</p>
+	        </header>
 
 
-							<p>I'm partial to programming that engages my algorithmic thinking, and have a penchant for finding the optimal means to solve front and back-end problems: whether it’s finding a way to implement an AngularJS/ReactJS-based UI in the fewest keystrokes, or reducing the time cost of a DB query- so long as the work ahead of me provides a unique set of challenges, I’m doing what I love. I’ve recently been working on a myriad of applications, utilizing some of today’s most popular frameworks and libraries. The apps I’ve built and contributed to incorporate Data Visualization, Real-Time Communication, along with a host of other popular development trends. </p>
-						</div>
-					</section>
+	      </div>
+	    </section>
 
-				<!-- Contact -->
-					<section id="contact" class="four">
-						<div class="container">
+	    <!-- Portfolio -->
+	    <section id="portfolio" class="two">
+	      <div class="container">
 
-							<header>
-								<h2>Contact</h2>
-							</header>
+	        <header>
+	          <h2>Portfolio</h2>
+	        </header>
 
-							<p>Let's chat!</p>
+	        <p>Some of my apps</p>
 
-						
-								<div class="row">
-									<div class="6u 12u$(mobile)"><input type="text" name="name" placeholder="Name" /></div>
-									<div class="6u$ 12u$(mobile)"><input type="text" name="email" placeholder="Email" /></div>
-									<div class="12u$">
-										<textarea name="message" placeholder="Message"></textarea>
-									</div>
-									<div class="12u$">
-										<button onclick='send()'/>Send Message</button>
-									</div>
-								</div>
-							
+	        <div class="row">
+	          <div class="4u 12u$(mobile)">
+	            <article class="item">
+	              <a href="https://github.com/Anoninnyc/HotspotApp" class="image fit"><img src="images/HS-min.png" alt="" /></a>
+	              <header>
+	                <h3>Hotspots</h3>
+	              </header>
+	            </article>
 
-						</div>
-					</section>
+	          </div>
+	          <div class="4u 12u$(mobile)">
+	            <article class="item">
+	              <a href="https://github.com/Anoninnyc/ReelFriends" class="image fit"><img src="images/TMA-min.png" alt="" /></a>
+	              <header>
+	                <h3>Reel Pals</h3>
+	              </header>
+	            </article>
 
-			</div>
+	          </div>
+	          <div class="4u$ 12u$(mobile)">
+	            <article class="item">
+	              <a href="https://github.com/Anoninnyc/jamWithFriends" class="image fit"><img src="images/JWF-min.png" alt="" /></a>
+	              <header>
+	                <h3>Jam With Friends</h3>
+	              </header>
+	            </article>
 
-		<!-- Footer -->
-			<div id="footer">
+	          </div>
+	        </div>
 
-				<!-- Copyright -->
-					<ul class="copyright">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
+	      </div>
+	    </section>
 
-			</div>
+	    <!-- About Me -->
+	    <section id="about" class="three">
+	      <div class="container">
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollzer.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
+	        <header>
+	          <h2>About Me</h2>
+	        </header>
 
+
+	        <p>I'm partial to programming that engages my algorithmic thinking, and have a penchant for finding the optimal means to solve front and back-end problems: whether it’s finding a way to implement an AngularJS/ReactJS-based UI in the fewest keystrokes,
+	          or reducing the time cost of a DB query- so long as the work ahead of me provides a unique set of challenges, I’m doing what I love. I’ve recently been working on a myriad of applications, utilizing some of today’s most popular frameworks and
+	          libraries. The apps I’ve built and contributed to incorporate Data Visualization, Real-Time Communication, along with a host of other popular development trends. </p>
+	      </div>
+	    </section>
+
+	    <!-- Contact -->
+	    <section id="contact" class="four">
+	      <div class="container">
+
+	        <header>
+	          <h2>Contact</h2>
+	        </header>
+
+	        <p>Let's chat!</p>
+
+	        <form id='formEntry'>
+	          <div class="row">
+	            <div class="6u 12u$(mobile)">
+	              <input type="text" name="name" placeholder="Name" id="messageName" />
+	            </div>
+	            <div class="6u$ 12u$(mobile)">
+	              <input type="text" name="email" placeholder="Email" id="messageEmail" />
+	            </div>
+	            <div class="12u$">
+	              <textarea name="message" placeholder="Message" id="messageText"></textarea>
+	            </div>
+
+	          </div>
+	        </form>
+	        <div class="12u$">
+	          <button onclick='send()' />Send Message</button>
+	        </div>
+
+	      </div>
+	    </section>
+
+	  </div>
+
+	  <!-- Footer -->
+	  <div id="footer">
+
+
+	  </div>
+
+	  <!-- Scripts -->
+	  <script src="assets/js/jquery.min.js"></script>
+	  <!-- 	<script src="assets/js/jquery.scrolly.min.js"></script>
+				<script src="assets/js/jquery.scrollzer.min.js"></script> -->
+	  <script src="assets/js/skel.min.js"></script>
+	  <script src="assets/js/util.js"></script>
+	  <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+	  <!-- 			<script src="assets/js/main.js"></script>
+	 -->
 	</body>
+
 	<script type="text/javascript">
-		const send = () => {
-			console.log("sending");
-			$.post('/message', "this should be the message", (res, err)=>{
-				console.log(res, err);
-			})
-	    };
+	
+	const send = () => {
+	  console.log("sending");
+	  $.post('/message', {name:$('#messageName').val(),email:$('#messageEmail').val(),message:$('#messageText').val()}, (res, err) => {
+	    console.log(res, err);
+	    $('#messageText').val('');
+	    $('#messageEmail').val('');
+	    $('#messageName').val('');
+	  })
+	};
+
+	const email = ()=> {
+		window.open("mailto:krishanmarya1@gmail.com?subject=Let's chat!");
+	};
+
+	const scroll = section => {
+	  $(`#${section}-link`).click(function() {
+	    $('html,body').animate({
+	        scrollTop: $(`#${section}`).offset().top
+	      },
+	      'slow');
+	  });
+
+	};
+
+	scroll('about');
+	scroll('portfolio');
+	scroll('contact');
+	scroll('top');
+
+	$(".skel-layers-ignoreHref").hover(function() {
+	  $(this).css({'cursor':'pointer'})
+	  $(this).addClass('hovered');
+	},function(){
+
+	 $(this).removeClass('hovered');
+	})
+//href="mailto:krishanmarya1@gmail.com?subject=Let's%20chat!"
 	</script>
 </html>
 

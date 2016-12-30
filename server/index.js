@@ -40,18 +40,21 @@ app.post('/message', (req, res) => {
 
 	console.log("req.body", req.body);
 
-	transport.sendMail({  //email options
-   from: "Krishan Arya <krishanmarya1@gmail.com>", // sender address.  Must be the same as authenticated user if using GMail.
-   to: "Krishan Arya <receiver@email.com>", // receiver
-   subject: "Emailing with nodemailer", // subject
-   text: req.body // body
-}, function(error, response){  //callback
-   if(error) {
-       console.log(error);
-   } else {
-       console.log("Message sent: " + response.message);
-   }
-});
+  res.send('noted');
+// 	transport.sendMail({  //email options
+//    from: "Krishan Arya <krishanmarya1@gmail.com>", // sender address.  Must be the same as authenticated user if using GMail.
+//    to: "Krishan Arya <receiver@email.com>", // receiver
+//    subject: "Emailing with nodemailer", // subject
+//    text: req.body // body
+// }, function(error, response){  //callback
+//    if(error) {
+//        console.log(error);
+//    } else {
+//        console.log("Message sent: " + response.message);
+//    }
+// });
+
+
 });
 
 //
