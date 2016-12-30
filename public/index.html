@@ -25,9 +25,9 @@
 
 	      <!-- Logo -->
 	      <div id="logo">
-	        <span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span>
+	        <span class="image avatar48"><img src="images/kma.jpg" alt="" /></span>
 	        <h1 id="title">Krishan Arya</h1>
-	        <p>Software engineer</p>
+	        <p>Software Engineer</p>
 	      </div>
 
 	      <!-- Nav -->
@@ -50,7 +50,6 @@
 	          <li><a id="portfolio-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Portfolio</span></a></li>
 	          <li><a id="about-link" class="skel-layers-ignoreHref"><span class="icon fa-user">About Me</span></a></li>
 	          <li><a id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-envelope">Contact</span></a></li>
-	          <li><a id="about-link" class="skel-layers-ignoreHref"><span class="icon fa-user">Posts</span></a></li>
 	        </ul>
 	      </nav>
 
@@ -186,55 +185,11 @@
 
 	  <!-- Scripts -->
 	  <script src="assets/js/jquery.min.js"></script>
-	  <!-- 	<script src="assets/js/jquery.scrolly.min.js"></script>
-				<script src="assets/js/jquery.scrollzer.min.js"></script> -->
 	  <script src="assets/js/skel.min.js"></script>
 	  <script src="assets/js/util.js"></script>
-	  <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-	  <!-- 			<script src="assets/js/main.js"></script>
-	 -->
+
 	</body>
 
-	<script type="text/javascript">
-	
-	const send = () => {
-	  console.log("sending");
-	  $.post('/message', {name:$('#messageName').val(),email:$('#messageEmail').val(),message:$('#messageText').val()}, (res, err) => {
-	    console.log(res, err);
-	    $('#messageText').val('');
-	    $('#messageEmail').val('');
-	    $('#messageName').val('');
-	  })
-	};
-
-	const email = ()=> {
-		window.open("mailto:krishanmarya1@gmail.com?subject=Let's chat!");
-	};
-
-	const scroll = section => {
-	  $(`#${section}-link`).click(function() {
-	    $('html,body').animate({
-	        scrollTop: $(`#${section}`).offset().top
-	      },
-	      'slow');
-	  });
-
-	};
-
-	scroll('about');
-	scroll('portfolio');
-	scroll('contact');
-	scroll('top');
-
-	$(".skel-layers-ignoreHref").hover(function() {
-	  $(this).css({'cursor':'pointer'})
-	  $(this).addClass('hovered');
-	},function(){
-
-	 $(this).removeClass('hovered');
-	})
-//href="mailto:krishanmarya1@gmail.com?subject=Let's%20chat!"
-	</script>
 </html>
 
 

@@ -585,3 +585,44 @@
 	};
 
 })(jQuery);
+
+
+	const send = () => {
+	  console.log("sending");
+	  $.post('/message', {name:$('#messageName').val(),email:$('#messageEmail').val(),message:$('#messageText').val()}, (res, err) => {
+	    console.log(res, err);
+	    $('#messageText').val('');
+	    $('#messageEmail').val('');
+	    $('#messageName').val('');
+	  })
+	};
+
+	const email = ()=> {
+		window.open("mailto:krishanmarya1@gmail.com?subject=Let's chat!");
+	};
+
+	const scroll = section => {
+	  $(`#${section}-link`).click(function() {
+	    $('html,body').animate({
+	        scrollTop: $(`#${section}`).offset().top
+	      },
+	      'slow');
+	  });
+
+	};
+
+	scroll('about');
+	scroll('portfolio');
+	scroll('contact');
+	scroll('top');
+
+	$(".skel-layers-ignoreHref").hover(function() {
+	  $(this).css({'cursor':'pointer'})
+	  $(this).addClass('hovered');
+	},function(){
+
+	 $(this).removeClass('hovered');
+	})
+$(".icon.fa-envelope").hover(function(){
+		$(this).css({cursor:"pointer"})
+	})	
