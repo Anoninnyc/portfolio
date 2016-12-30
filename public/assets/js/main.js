@@ -55,8 +55,8 @@
 						var t = $(this),
 							href = t.attr('href');
 
-						if (href[0] != '#')
-							return;
+						// if (href[0] != '#')
+						// 	return;
 
 						e.preventDefault();
 

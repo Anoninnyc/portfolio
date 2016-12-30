@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Prologue by HTML5 UP</title>
+		<title>Krishan Arya</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -155,7 +155,7 @@
 
 							<p>Let's chat!</p>
 
-							<form method="post" action="#">
+						
 								<div class="row">
 									<div class="6u 12u$(mobile)"><input type="text" name="name" placeholder="Name" /></div>
 									<div class="6u$ 12u$(mobile)"><input type="text" name="email" placeholder="Email" /></div>
@@ -163,10 +163,10 @@
 										<textarea name="message" placeholder="Message"></textarea>
 									</div>
 									<div class="12u$">
-										<input onclick='send()' type="submit" value="Send Message" />
+										<button onclick='send()'/>Send Message</button>
 									</div>
 								</div>
-							</form>
+							
 
 						</div>
 					</section>
@@ -195,7 +195,10 @@
 	</body>
 	<script type="text/javascript">
 		const send = () => {
-			console.log("sending")
+			console.log("sending");
+			$.post('/message', "this should be the message", (res, err)=>{
+				console.log(res, err);
+			})
 	    };
 	</script>
 </html>
