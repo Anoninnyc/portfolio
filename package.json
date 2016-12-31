@@ -22,8 +22,7 @@
     "express-session": "^1.14.0",
     "morgan": "^1.7.0",
     "mysql": "^2.11.1",
-    "nodemailer": "~1.4.0",
-    "nodemailer-smtp-transport":"~1.0.3",
+    "nodemailer": "^2.7.0",
     "webpack": "^1.13.1"
   }
 }

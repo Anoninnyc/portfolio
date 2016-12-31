@@ -1,4 +1,4 @@
-"use strict"
+
 /* Requires */
 const express = require('express');
 const path = require('path');
@@ -7,18 +7,12 @@ const bodyParser = require('body-parser');
 const expressSession=require('express-session');
 const cookieParser = require('cookie-parser');
 const nodemailer = require('nodemailer');
-var smtpTransport = require('nodemailer-smtp-transport');
-var transport = nodemailer.createTransport((smtpTransport({
-  host: "localhost",
-  secureConnection: false, // use SSL
-  port: 3000, // port for secure SMTP
-  auth: {
-    user: "krishanmarya1",
-    pass: "!!"
-  }
-})));
+const test = process.env.MAIL_ADDRESS;
+const transportString = 'smtps://'+process.env.MAIL_ADDRESS+'%40gmail.com:'+process.env.MAIL_PASS+'@smtp.gmail.com';
+const transporter = nodemailer.createTransport(transportString);
+require("dotenv").config();
 
-
+console.log(transportString,test,typeof process.env.MAIL_ADDRESS)
 /* Init */
 const app = express();
 const server = http.createServer(app);
@@ -40,31 +34,29 @@ app.post('/message', (req, res) => {
 
 	console.log("req.body", req.body);
 
-  res.send('noted');
-// 	transport.sendMail({  //email options
-//    from: "Krishan Arya <krishanmarya1@gmail.com>", // sender address.  Must be the same as authenticated user if using GMail.
-//    to: "Krishan Arya <receiver@email.com>", // receiver
-//    subject: "Emailing with nodemailer", // subject
-//    text: req.body // body
-// }, function(error, response){  //callback
-//    if(error) {
-//        console.log(error);
-//    } else {
-//        console.log("Message sent: " + response.message);
-//    }
-// });
+  var mailOptions = {
+    from: '"Krishan Arya 👥" <krishanmarya1@gmail.com>', // sender address
+    to: 'krishanmarya1@gmail.com', // list of receivers
+    subject: 'Your app got a message!', // Subject line
+    text: `${req.body.name}, with email ${req.body.email}, sent a message saying: ${req.body.message}`, // plaintext body
+    html: `<b>${req.body.name}, with email ${req.body.email}, sent a message saying ${req.body.message}</b>` // html body
+};
 
-
+transporter.sendMail(mailOptions, function(error, info){
+    if(error){
+        return console.log(error);
+    }
+    console.log('Message sent: ' + info.response);
 });
 
-//
+  res.send('noted');
+});
+
 app.get('*', (req, res) => {
   console.log('req.session', req.session);
   const pathToIndex = path.join(pathToStaticDir, 'index.html');
   res.status(200).sendFile(pathToIndex);
 });
-
-
 
 server.listen(port, () => {
   console.log('Listening on port', port);
