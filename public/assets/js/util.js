@@ -586,14 +586,58 @@
 
 })(jQuery);
 
+	$(".icon.fa-envelope,.image.fit").hover(function(){
+	  $(this).css({cursor:"pointer"})
+	})
 
 	const send = () => {
+	  const messageName = $('#messageName').val();
+	  const messageEmail = $('#messageEmail').val();
+	  const messageText = $('#messageText').val();
+	  function validateEmail(email) {
+	    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	    return re.test(email);
+	  }
+
+	  if (!messageName.length){
+	  	console.log('badName')
+	  	if ($('#badName').css('opacity')==='0'){
+	  	  $('#badName').fadeTo('slow', 1);
+		  $('#badName').fadeTo('slow', 0);
+	    }
+	    return;
+	  }
+	  if (!messageText.length){
+	  	console.log('Bad messageText');
+	  	if ($('#badMessage').css('opacity')==='0'){
+	  	  $('#badMessage').fadeTo('slow',1);
+		  $('#badMessage').fadeTo('slow',0);
+		}
+	  	return;
+	  }
+
+	   if (!validateEmail(messageEmail)){
+	  	console.log('Bad messageEmail');
+	  	if ($('#badEmail').css('opacity')==='0'){
+	  	  $('#badEmail').fadeTo('slow',1);
+		  $('#badEmail').fadeTo('slow',0);
+	    }
+	  	return;
+	  }
+	  
 	  console.log("sending");
-	  $.post('/message', {name:$('#messageName').val(),email:$('#messageEmail').val(),message:$('#messageText').val()}, (res, err) => {
+
+	   $('#messageText').val('');
+	   $('#messageEmail').val('');
+	   $('#messageName').val('');
+
+		$('#sentMessage').fadeTo('slow',1);
+		$('#sentMessage').fadeTo('slow',0); 
+
+
+	  $.post('/message', {name:messageName,email:messageEmail,message:messageText}, (res, err) => {
 	    console.log(res, err);
-	    $('#messageText').val('');
-	    $('#messageEmail').val('');
-	    $('#messageName').val('');
+	   
 	  })
 	};
 
@@ -623,6 +667,3 @@
 
 	 $(this).removeClass('hovered');
 	})
-$(".icon.fa-envelope").hover(function(){
-		$(this).css({cursor:"pointer"})
-	})	

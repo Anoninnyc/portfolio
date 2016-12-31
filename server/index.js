@@ -7,12 +7,11 @@ const bodyParser = require('body-parser');
 const expressSession=require('express-session');
 const cookieParser = require('cookie-parser');
 const nodemailer = require('nodemailer');
-const test = process.env.MAIL_ADDRESS;
-const transportString = 'smtps://'+process.env.MAIL_ADDRESS+'%40gmail.com:'+process.env.MAIL_PASS+'@smtp.gmail.com';
-const transporter = nodemailer.createTransport(transportString);
 require("dotenv").config();
+const transportString = `smtps://${process.env.MAIL_ADDRESS}%40gmail.com:${process.env.MAIL_PASS}@smtp.gmail.com`;
+const transporter = nodemailer.createTransport(transportString);
+console.log(transportString);
 
-console.log(transportString,test,typeof process.env.MAIL_ADDRESS)
 /* Init */
 const app = express();
 const server = http.createServer(app);
@@ -22,7 +21,6 @@ app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-console.log('Run it');
 const port = process.env.PORT || 3000;
 
 const pathToStaticDir = path.resolve(__dirname, '..', 'public');
@@ -35,7 +33,7 @@ app.post('/message', (req, res) => {
 	console.log("req.body", req.body);
 
   var mailOptions = {
-    from: '"Krishan Arya 👥" <krishanmarya1@gmail.com>', // sender address
+    from: '"Krishan Arya 👥" <dummyacct101390@gmail.com>', // sender address
     to: 'krishanmarya1@gmail.com', // list of receivers
     subject: 'Your app got a message!', // Subject line
     text: `${req.body.name}, with email ${req.body.email}, sent a message saying: ${req.body.message}`, // plaintext body

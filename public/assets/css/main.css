@@ -1654,6 +1654,11 @@
 		background-color: grey;
 	}
 
+	h1#sentMessage, #badEmail,#badName,#badMessage {
+    font-weight: bold;
+    opacity:0;	
+	}
+
 	sub {
 		position: relative;
 		top: 0.5em;
