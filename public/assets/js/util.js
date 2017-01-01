@@ -586,7 +586,7 @@
 
 })(jQuery);
 
-	$(".icon.fa-envelope,.image.fit").hover(function(){
+	$(".icon.fa-envelope,.image.fit,.icon.fa-twitter,.icon.fa-github,.icon.fa-enevlope").hover(function(){
 	  $(this).css({cursor:"pointer"})
 	})
 
@@ -644,6 +644,16 @@
 	const email = ()=> {
 		window.open("mailto:krishanmarya1@gmail.com?subject=Let's chat!");
 	};
+
+	const github = ()=> {
+		window.open("https://github.com/Anoninnyc/");
+	};
+
+	const twitter = ()=> {
+		window.open("https://twitter.com/KMAengineer");
+	};
+
+
 
 	const scroll = section => {
 	  $(`#${section}-link`).click(function() {
