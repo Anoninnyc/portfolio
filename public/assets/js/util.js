@@ -592,6 +592,21 @@
 	  })
 	})
 
+
+	function showErrorMessage(appendTo, message, id) {
+	  if (!($(`#${id}`).length)) {
+	    $(appendTo)
+	      .append(`<div id=${id}>${message}</div>`)
+	      .hide()
+	      .fadeIn(999)
+	      .fadeOut(999)
+	      .queue(next => {
+	        $(`#${id}`).remove();
+	        next();
+	      });
+	  }
+	}
+
 	const send = () => {
 	  const messageName = $('#messageName').val();
 	  const messageEmail = $('#messageEmail').val();
@@ -604,27 +619,17 @@
 
 	  if (!messageName.length) {
 	    console.log('badName')
-	    if ($('#badName').css('opacity') === '0') {
-	      $('#badName').fadeTo('slow', 1);
-	      $('#badName').fadeTo('slow', 0);
-	    }
+		showErrorMessage('#errorMessage', 'Please enter a valid name', 'badname');
 	    return;
 	  }
+
 	  if (!messageText.length) {
-	    console.log('Bad messageText');
-	    if ($('#badMessage').css('opacity') === '0') {
-	      $('#badMessage').fadeTo('slow', 1);
-	      $('#badMessage').fadeTo('slow', 0);
-	    }
+	  	showErrorMessage('#errorMessage', 'Please enter a valid message', 'badmessage');
 	    return;
 	  }
 
 	  if (!validateEmail(messageEmail)) {
-	    console.log('Bad messageEmail');
-	    if ($('#badEmail').css('opacity') === '0') {
-	      $('#badEmail').fadeTo('slow', 1);
-	      $('#badEmail').fadeTo('slow', 0);
-	    }
+	   	 showErrorMessage('#errorMessage', 'Please enter a valid email address', 'bademail');
 	    return;
 	  }
 
@@ -634,8 +639,8 @@
 	  $('#messageEmail').val('');
 	  $('#messageName').val('');
 
-	  $('#sentMessage').fadeTo('slow', 1);
-	  $('#sentMessage').fadeTo('slow', 0);
+	  showErrorMessage('#errorMessage', 'Thanks for reaching out!', 'thankyou');
+
 
 
 	  $.post('/message', {

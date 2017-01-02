@@ -1650,8 +1650,9 @@
 	}
 
 	h1#sentMessage, #badEmail,#badName,#badMessage {
-    font-weight: bold;
-    opacity:0;	
+      font-weight: bold;
+      opacity:0;	
+      display:none;
 	}
 
 	sub {
