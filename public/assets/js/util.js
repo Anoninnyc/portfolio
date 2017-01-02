@@ -586,71 +586,78 @@
 
 })(jQuery);
 
-	$(".icon.fa-envelope,.image.fit,.icon.fa-twitter,.icon.fa-github,.icon.fa-enevlope").hover(function(){
-	  $(this).css({cursor:"pointer"})
+	$(".icon.fa-envelope,.image.fit,.icon.fa-twitter,.icon.fa-github,.icon.fa-enevlope").hover(function() {
+	  $(this).css({
+	    cursor: "pointer"
+	  })
 	})
 
 	const send = () => {
 	  const messageName = $('#messageName').val();
 	  const messageEmail = $('#messageEmail').val();
 	  const messageText = $('#messageText').val();
+
 	  function validateEmail(email) {
 	    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 	    return re.test(email);
 	  }
 
-	  if (!messageName.length){
-	  	console.log('badName')
-	  	if ($('#badName').css('opacity')==='0'){
-	  	  $('#badName').fadeTo('slow', 1);
-		  $('#badName').fadeTo('slow', 0);
+	  if (!messageName.length) {
+	    console.log('badName')
+	    if ($('#badName').css('opacity') === '0') {
+	      $('#badName').fadeTo('slow', 1);
+	      $('#badName').fadeTo('slow', 0);
 	    }
 	    return;
 	  }
-	  if (!messageText.length){
-	  	console.log('Bad messageText');
-	  	if ($('#badMessage').css('opacity')==='0'){
-	  	  $('#badMessage').fadeTo('slow',1);
-		  $('#badMessage').fadeTo('slow',0);
-		}
-	  	return;
+	  if (!messageText.length) {
+	    console.log('Bad messageText');
+	    if ($('#badMessage').css('opacity') === '0') {
+	      $('#badMessage').fadeTo('slow', 1);
+	      $('#badMessage').fadeTo('slow', 0);
+	    }
+	    return;
 	  }
 
-	   if (!validateEmail(messageEmail)){
-	  	console.log('Bad messageEmail');
-	  	if ($('#badEmail').css('opacity')==='0'){
-	  	  $('#badEmail').fadeTo('slow',1);
-		  $('#badEmail').fadeTo('slow',0);
+	  if (!validateEmail(messageEmail)) {
+	    console.log('Bad messageEmail');
+	    if ($('#badEmail').css('opacity') === '0') {
+	      $('#badEmail').fadeTo('slow', 1);
+	      $('#badEmail').fadeTo('slow', 0);
 	    }
-	  	return;
+	    return;
 	  }
-	  
+
 	  console.log("sending");
 
-	   $('#messageText').val('');
-	   $('#messageEmail').val('');
-	   $('#messageName').val('');
+	  $('#messageText').val('');
+	  $('#messageEmail').val('');
+	  $('#messageName').val('');
 
-		$('#sentMessage').fadeTo('slow',1);
-		$('#sentMessage').fadeTo('slow',0); 
+	  $('#sentMessage').fadeTo('slow', 1);
+	  $('#sentMessage').fadeTo('slow', 0);
 
 
-	  $.post('/message', {name:messageName,email:messageEmail,message:messageText}, (res, err) => {
+	  $.post('/message', {
+	    name: messageName,
+	    email: messageEmail,
+	    message: messageText
+	  }, (res, err) => {
 	    console.log(res, err);
-	   
+
 	  })
 	};
 
-	const email = ()=> {
-		window.open("mailto:krishanmarya1@gmail.com?subject=Let's chat!");
+	const email = () => {
+	  window.open("mailto:krishanmarya1@gmail.com?subject=Let's chat!");
 	};
 
-	const github = ()=> {
-		window.open("https://github.com/Anoninnyc/");
+	const github = () => {
+	  window.open("https://github.com/Anoninnyc/");
 	};
 
-	const twitter = ()=> {
-		window.open("https://twitter.com/KMAengineer");
+	const twitter = () => {
+	  window.open("https://twitter.com/KMAengineer");
 	};
 
 
@@ -671,9 +678,11 @@
 	scroll('top');
 
 	$(".skel-layers-ignoreHref").hover(function() {
-	  $(this).css({'cursor':'pointer'})
+	  $(this).css({
+	    'cursor': 'pointer'
+	  })
 	  $(this).addClass('hovered');
-	},function(){
+	}, function() {
 
-	 $(this).removeClass('hovered');
+	  $(this).removeClass('hovered');
 	})
