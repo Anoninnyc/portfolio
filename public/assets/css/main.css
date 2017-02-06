@@ -17,6 +17,10 @@
 		display: block;
 	}
 
+	object {
+    width: 100%;
+    height: 70em;
+   }
 
 
 		
@@ -36,6 +40,13 @@
 		content: '';
 		content: none;
 	}
+
+	.\31 2u, .\31 2u\24 {
+    width: 100%;
+    clear: none;
+    text-align: center;
+    margin-left: 0;
+}
 
 	table {
 		border-collapse: collapse;
@@ -1652,7 +1663,6 @@
 	h1#sentMessage, #badEmail,#badName,#badMessage {
       font-weight: bold;
       opacity:0;	
-      display:none;
 	}
 
 	sub {

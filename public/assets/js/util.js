@@ -682,6 +682,7 @@
 	scroll('contact');
 	scroll('top');
 	scroll('blog');
+	scroll('resume')
 
 	$(".skel-layers-ignoreHref").hover(function() {
 	  $(this).css({
